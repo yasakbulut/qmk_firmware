@@ -1,0 +1,3 @@
+- Includes a custom font based off of `crkbd`'s `glcdfont.c` file.
+- Correctly shows the active layer in the left side oled. does not show the currently pressed hey.
+- Shows the proper logo on the right side.
