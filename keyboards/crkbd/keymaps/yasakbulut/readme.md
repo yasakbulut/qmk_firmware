@@ -15,6 +15,7 @@ This is a keymap heavily based off of miryoku with the following changes applied
 - MacOS specific fixes:
   - Vertical mouse scroll keys are flipped
   - Horizontal mouse scroll keys are flipped
+  - Ctrl and Super are swapped since MacOS is heavy on Super and could lead to pinkie strain
 
 ## Reference
 
