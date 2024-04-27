@@ -98,4 +98,20 @@ bool achordion_eager_mod(uint8_t mod) {
     // we're eagerly applying for all the mod keys
     return true;
 }
+
+// exclude thumb keys from the same-hand rule
+bool achordion_chord(uint16_t tap_hold_keycode,
+                    keyrecord_t* tap_hold_record,
+                    uint16_t other_keycode,
+                    keyrecord_t* other_record) {
+
+    // MATRIX_ROWS is 8 for this keyboard, and the thumb keys are at rows 3 and 7
+    bool is_thumb_key = (other_record->event.key.row % (MATRIX_ROWS / 2)) == 3;
+
+    if (is_thumb_key) {
+        return true;
+    }
+
+    return achordion_opposite_hands(tap_hold_record, other_record);
+}
 // end achordion
