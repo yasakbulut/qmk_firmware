@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "features/achordion.h"
 
 #define LAYOUT LAYOUT_split_3x6_3
 
@@ -78,3 +79,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  KC_APP,        KC_SPC,        KC_TAB,        XXXXX,         XXXXX,         XXXXX
    ),
 };
+// end keymap
+
+// start achordion
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+    if (!process_achordion(keycode, record)) {
+        return false;
+    }
+
+    return true;
+}
+
+void matrix_scan_user(void) {
+    achordion_task();
+}
+
+bool achordion_eager_mod(uint8_t mod) {
+    // we're eagerly applying for all the mod keys
+    return true;
+}
+// end achordion
