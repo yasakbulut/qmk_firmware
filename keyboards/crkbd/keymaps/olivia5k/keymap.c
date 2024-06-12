@@ -62,13 +62,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [LAYER_NUM] = LAYOUT(
     XXXXX,         KC_LBRC,       KC_7,          KC_8,          KC_9,          KC_RBRC,       XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,        \
-    XXXXX,         KC_SCLN,       KC_4,          KC_5,          KC_6,          KC_EQL,        XXXXX,         KC_LSFT,       KC_LCTL,       KC_LALT,       KC_LGUI,       XXXXX,        \
+    XXXXX,         KC_COLN,       KC_4,          KC_5,          KC_6,          KC_EQL,        XXXXX,         KC_LSFT,       KC_LCTL,       KC_LALT,       KC_LGUI,       XXXXX,        \
     XXXXX,         KC_GRV,        KC_1,          KC_2,          KC_3,          KC_BSLS,       XXXXX,         XXXXX,         XXXXX,         KC_ALGR,       XXXXX,         XXXXX,        \
                                                  KC_DOT,        KC_0,          KC_MINS,       XXXXX,         XXXXX,         XXXXX
    ),
     [LAYER_SYM] = LAYOUT(
     XXXXX,         KC_LCBR,       KC_AMPR,       KC_ASTR,       KC_LPRN,       KC_RCBR,       XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,        \
-    XXXXX,         KC_COLN,       KC_DLR,        KC_PERC,       KC_CIRC,       KC_PLUS,       XXXXX,         KC_LSFT,       KC_LCTL,       KC_LALT,       KC_LGUI,       XXXXX,        \
+    XXXXX,         KC_SCLN,       KC_DLR,        KC_PERC,       KC_CIRC,       KC_PLUS,       XXXXX,         KC_LSFT,       KC_LCTL,       KC_LALT,       KC_LGUI,       XXXXX,        \
     XXXXX,         KC_TILD,       KC_EXLM,       KC_AT,         KC_HASH,       KC_PIPE,       XXXXX,         XXXXX,         XXXXX,         KC_ALGR,       XXXXX,         XXXXX,        \
                                                  KC_LPRN,       KC_RPRN,       KC_UNDS,       XXXXX,         XXXXX,         XXXXX
    ),
