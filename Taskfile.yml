@@ -7,19 +7,9 @@ tasks:
   flash:
     desc: Compile the current configuration and flash the keyboard
     cmds:
-      - >-
-        make crkbd:manna-harbour_miryoku:flash
-        AVR_CFLAGS="-Wno-array-bounds"
-        MIRYOKU_ALPHAS=QWERTY
-        MIRYOKU_NAV=VI
-        MIRYOKU_TAP=QWERTY
+      - qmk flash -c -kb crkbd -km olivia5k
 
   build:
     desc: Compile the current configuration without flashing
     cmds:
-      - >-
-        make crkbd:manna-harbour_miryoku
-        AVR_CFLAGS="-Wno-array-bounds"
-        MIRYOKU_ALPHAS=QWERTY
-        MIRYOKU_NAV=VI
-        MIRYOKU_TAP=QWERTY
+      - qmk build -c -kb crkbd -km olivia5k
