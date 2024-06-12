@@ -1,0 +1,40 @@
+# to be used with https://github.com/caksoylar/keymap-drawer
+layout:
+  qmk_keyboard: crkbd/rev1
+  qmk_layout: LAYOUT_split_3x6_3
+layers:
+  BASE:
+    - [{t: "`", s: "~"}, "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", {t: "=", s: "+"}]
+    - [null, {t: "A", h: "Super"}, {t: "S", h: "Alt"}, {t: "D", h: "Ctrl"}, {t: "F", h: "Shift"}, "G", "H", {t: "J", h: "Shift"}, {t: "K", h: "Ctrl"}, {t: "L", h: "Alt"}, {t: ";", s: ":", h: "Super"}, {t: "'", s: '"'}]
+    - [null, "Z", "X", "C", "V", "B", "N", "M", {t: ",", s: "<"}, {t: ".", s: ">"}, {t: "/", s: "?"}, {t: "-", s: "_"}]
+    - [{t: $$mdi:keyboard-esc$$, h: Media}, {t: $$mdi:backspace-outline$$, h: Nav}, {t: $$mdi:keyboard-tab$$, h: Mouse}, {t: $$mdi:keyboard-return$$, h: Symbol}, {t: $$mdi:keyboard-space$$, h: Num}, {t: $$mdi:backspace-reverse-outline$$, h: Fun}]
+  NAV:
+    - [null, null, null, null, null, null, "(", "{", "}", "[", "]", ")"]
+    - [null, "Super", "Alt", "Ctrl", "Shift", null, $$mdi:arrow-left$$, $$mdi:arrow-down$$, $$mdi:arrow-up$$, $$mdi:arrow-right$$, "Caps Word", null]
+    - [null, null, null, null, null, null, null, null, null, null, "\\", "|"]
+    - [null, {type: held}, null, "$$mdi:keyboard-return$$", "$$mdi:backspace-outline$$", "$$mdi:backspace-reverse-outline$$"]
+  MOUSE:
+    - [null, null, null, null, null, null, null, null, null, null, null, null]
+    - [null, "Super", "Alt", "Ctrl", "Shift", null, $$mdi:arrow-left-bold$$, $$mdi:arrow-down-bold$$, $$mdi:arrow-up-bold$$, $$mdi:arrow-right-bold$$, null, null]
+    - [null, null, null, null, null, null, $$mdi:arrow-left-bold-outline$$, $$mdi:arrow-down-bold-outline$$, $$mdi:arrow-up-bold-outline$$, $$mdi:arrow-right-bold-outline$$, null, null]
+    - [null, null, {type: held}, "Right click", "Left click", "Middle click"]
+  MEDIA:
+    - [null, null, null, null, null, null, "RGB Mod", "RGB Hue", "RGB Sat", "RGB Val", "RGB Tog", null]
+    - [null, "Super", "Alt", "Ctrl", "Shift", null, $$mdi:skip-previous$$, $$mdi:volume-minus$$, $$mdi:volume-plus$$, $$mdi:skip-next$$, null, null]
+    - [null, null, null, null, null, null, null, null, null, null, null, null]
+    - [{type: held}, null, null, $$mdi:stop$$, $$mdi:play-pause$$, $$mdi:volume-mute$$]
+  NUM:
+    - [null, {t: "[", s: "{"}, {t: "7", s: "&"}, {t: "8", s: "*"}, {t: "9", s: "("}, {t: "]", s: "}"}, null, null, null, null, null, null]
+    - [null, {t: ";", s: ":"}, {t: "4", s: "$"}, {t: "5", s: "%"}, {t: "6", s: "^"}, {t: "=", s: "+"}, null, "Shift", "Ctrl", "Alt", "Super", null]
+    - [null, {t: "`", s: "~"}, {t: "1", s: "!"}, {t: "2", s: "@"}, {t: "3", s: "#"}, {t: "\\", s: "|"}, null, null, null, null, null, null]
+    - [{t: ".", s: ">"}, {t: "0", s: ")"}, {t: "-", s: "_"}, null, {type: held}, null]
+  SYMBOL:
+    - [null, "{", "&", "*", "(", "}", null, null, null, null, null, null]
+    - [null, ":", "$", "%", "^", "+", null, "Shift", "Ctrl", "Alt", "Super", null]
+    - [null, "~", "!", "@", "#", "|", null, null, null, null, null, null]
+    - ["(", ")", "_", {type: held}, null, null]
+  FUN:
+    - [null, "F12", "F7", "F8", "F9", "PrtScn SysRq", null, null, null, null, null, null]
+    - [null, "F11", "F4", "F5", "F6", "Scroll Lock", null, "Shift", "Ctrl", "Alt", "Super", null]
+    - [null, "F10", "F1", "F2", "F3", "Pause Break", null, null, null, null, null, null]
+    - ["App", $$mdi:keyboard-space$$, $$mdi:keyboard-tab$$, null, null, {type: held}]
