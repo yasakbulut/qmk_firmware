@@ -1,3 +1,4 @@
 - Includes a custom font based off of `crkbd`'s `glcdfont.c` file.
 - Correctly shows the active layer in the left side oled. does not show the currently pressed hey.
 - Shows the proper logo on the right side.
+- Enables the "swirling rainbow effect". This effect has 6 variants, so pressing `RGB_MOD` 7 times will go through all of them, and get you back where you started.
