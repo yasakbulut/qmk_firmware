@@ -9,43 +9,6 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   return rotation;
 }
 
-// layers
-enum {
-    LAYER_BASE=0,
-    LAYER_NAV=2,
-    LAYER_MOUSE=4,
-    LAYER_MEDIA=8,
-    LAYER_NUM=16,
-    LAYER_SYM=32,
-    LAYER_FUN=64,
-};
-
-void oled_render_layer_state(void) {
-    oled_write_P(PSTR("Layer: "), false);
-    switch (layer_state) {
-        case LAYER_BASE:
-            oled_write_ln_P(PSTR("Base"), false);
-            break;
-        case LAYER_NAV:
-            oled_write_ln_P(PSTR("Nav"), false);
-            break;
-        case LAYER_MOUSE:
-            oled_write_ln_P(PSTR("Mouse"), false);
-            break;
-        case LAYER_MEDIA:
-            oled_write_ln_P(PSTR("Media"), false);
-            break;
-        case LAYER_NUM:
-            oled_write_ln_P(PSTR("Num"), false);
-            break;
-        case LAYER_SYM:
-            oled_write_ln_P(PSTR("Sym"), false);
-            break;
-        case LAYER_FUN:
-            oled_write_ln_P(PSTR("Fun"), false);
-            break;
-    }
-}
 
 void oled_render_logo(void) {
     static const char PROGMEM cacaw_logo[] = {
@@ -55,6 +18,64 @@ void oled_render_logo(void) {
         0};
     oled_write_P(cacaw_logo, false);
 }
+
+// layers
+enum {
+    LAYER_BASE=0,
+    LAYER_NAV=2,
+    LAYER_MOUSE=4,
+    LAYER_MEDIA=8,
+    LAYER_NUM=16,
+    LAYER_SYM=32,
+    LAYER_FUN=64,
+    LAYER_GAME=128,
+};
+
+static oled_rotation_t current_rotation = OLED_ROTATION_0;
+
+void rotate_if_needed(oled_rotation_t rotation) {
+    if (current_rotation != rotation) {
+        current_rotation = rotation;
+        oled_init(rotation);
+    }
+}
+
+void render_layer_name(const char *data, bool invert) {
+    rotate_if_needed(OLED_ROTATION_0);
+    oled_write_ln_P(data, invert);
+}
+
+void oled_render_layer_state(void) {
+    oled_clear();
+    switch (layer_state) {
+        case LAYER_BASE:
+            render_layer_name(PSTR("Layer: Base"), false);
+            break;
+        case LAYER_NAV:
+            render_layer_name(PSTR("Layer: Nav"), false);
+            break;
+        case LAYER_MOUSE:
+            render_layer_name(PSTR("Layer: Mouse"), false);
+            break;
+        case LAYER_MEDIA:
+            render_layer_name(PSTR("Layer: Media"), false);
+            break;
+        case LAYER_NUM:
+            render_layer_name(PSTR("Layer: Num"), false);
+            break;
+        case LAYER_SYM:
+            render_layer_name(PSTR("Layer: Sym"), false);
+            break;
+        case LAYER_FUN:
+            render_layer_name(PSTR("Layer: Fun"), false);
+            break;
+        case LAYER_GAME:
+            rotate_if_needed(OLED_ROTATION_180);
+            oled_render_logo();
+            break;
+    }
+}
+
 
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
