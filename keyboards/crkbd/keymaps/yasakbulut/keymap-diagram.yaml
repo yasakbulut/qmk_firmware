@@ -36,5 +36,10 @@ layers:
   FUN:
     - [null, "F12", "F7", "F8", "F9", "PrtScn SysRq", null, null, null, null, null, null]
     - [null, "F11", "F4", "F5", "F6", "Scroll Lock", null, "Shift", "Super", "Alt", "Ctrl", null]
-    - [null, "F10", "F1", "F2", "F3", "Pause Break", null, null, null, null, null, null]
+    - ["Game Layer", "F10", "F1", "F2", "F3", "Pause Break", null, null, null, null, null, null]
     - ["App", $$mdi:keyboard-space$$, $$mdi:keyboard-tab$$, null, null, {type: held}]
+  GAME:
+    - [Ctrl, "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", {t: "=", s: "+"}]
+    - [Shift, "A", "S", "D", "F", "G", "H", "J", "K", "L", {t: ";", s: ":"}, {t: "'", s: '"'}]
+    - [Alt, "Z", "X", "C", "V", "B", "N", "M", {t: ",", s: "<"}, {t: ".", s: ">"}, {t: "/", s: "?"}, {t: "-", s: "_"}]
+    - [{t: $$mdi:keyboard-esc$$}, {t: $$mdi:backspace-outline$$}, {t: $$mdi:keyboard-tab$$}, {t: $$mdi:keyboard-return$$}, {t: $$mdi:keyboard-space$$}, {t: "Base Layer"}]
