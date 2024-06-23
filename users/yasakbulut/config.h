@@ -5,6 +5,9 @@
 #define RGBLIGHT_LED_COUNT 54
 #define RGBLIGHT_SPLIT 27
 
+// If defined, the RGB lighting will be switched off when the host goes to sleep
+#define RGBLIGHT_SLEEP
+
 #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 
 #define RGBLIGHT_DEFAULT_ON true
