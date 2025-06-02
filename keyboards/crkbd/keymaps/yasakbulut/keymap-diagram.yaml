@@ -29,7 +29,7 @@ layers:
     - [null, null, $$mdi:arrow-left-bold-outline$$, $$mdi:arrow-down-bold-outline$$, $$mdi:arrow-up-bold-outline$$, $$mdi:arrow-right-bold-outline$$, null, null, null, null, null, null]
     - ["Middle click", "Left click", "Right click", {type: held}, null, null]
   MEDIA:
-    - [null, "RGB Mod", "RGB Hue", "RGB Sat", "RGB Val", "RGB Tog", null, null, null, null, null, null]
+    - ["RGB Speed", "RGB Mod", "RGB Hue", "RGB Sat", "RGB Val", "RGB Tog", null, null, null, null, null, null]
     - [null, null, $$mdi:skip-previous$$, $$mdi:volume-plus$$, $$mdi:volume-minus$$, $$mdi:skip-next$$, null, "Shift", "Super", "Alt", "Ctrl", null]
     - [null, null, null, null, null, null, null, null, null, null, null, null]
     - [$$mdi:stop$$, $$mdi:play-pause$$, $$mdi:volume-mute$$, null, null, {type: held}]

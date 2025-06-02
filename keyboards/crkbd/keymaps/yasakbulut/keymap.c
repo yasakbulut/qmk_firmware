@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [LAYER_MEDIA] = LAYOUT(
-    XXXXX,         RGB_MOD,       RGB_HUI,       RGB_SAI,       RGB_VAI,       RGB_TOG,       XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,        \
+    RGB_SPD,       RGB_MOD,       RGB_HUI,       RGB_SAI,       RGB_VAI,       RGB_TOG,       XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,        \
     XXXXX,         XXXXX,         KC_MPRV,       KC_VOLU,       KC_VOLD,       KC_MNXT,       XXXXX,         KC_LSFT,       KC_LGUI,       KC_LALT,       KC_LCTL,       XXXXX,        \
     XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         KC_ALGR,       XXXXX,         XXXXX,         XXXXX,        \
                                                  KC_MSTP,       KC_MPLY,       KC_MUTE,       XXXXX,         XXXXX,         XXXXX         
