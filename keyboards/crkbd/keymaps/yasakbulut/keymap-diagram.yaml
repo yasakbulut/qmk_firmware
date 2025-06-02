@@ -11,7 +11,7 @@ layers:
   NAV:
     - [null, null, null, null, null, null, "(", "{", "}", "[", "]", ")"]
     - [null, "Ctrl", "Alt", "Super", "Shift", null, $$mdi:arrow-left$$, $$mdi:arrow-down$$, $$mdi:arrow-up$$, $$mdi:arrow-right$$, "Caps Word", null]
-    - [null, null, null, null, null, null, null, null, null, null, "\\", "|"]
+    - [null, null, null, null, null, null, null, "(", ")", "|", "\\", "|"]
     - [null, {type: held}, null, "$$mdi:keyboard-return$$", "$$mdi:backspace-outline$$", "$$mdi:backspace-reverse-outline$$"]
   NUM:
     - [null, null, null, null, null, null, {t: "[", s: "{"}, {t: "7", s: "&"}, {t: "8", s: "*"}, {t: "9", s: "("}, {t: "]", s: "}"}, null]

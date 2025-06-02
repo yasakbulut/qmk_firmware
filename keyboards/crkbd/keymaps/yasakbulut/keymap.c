@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [LAYER_NAV] = LAYOUT(
     XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         KC_LPRN,       KC_LCBR,       KC_RCBR,       KC_LBRC,       KC_RBRC,       KC_RPRN,      \
     XXXXX,         KC_LCTL,       KC_LALT,       KC_LGUI,       KC_LSFT,       XXXXX,         KC_LEFT,       KC_DOWN,       KC_UP,         KC_RGHT,       CW_TOGG,       XXXXX,        \
-    XXXXX,         XXXXX,         KC_ALGR,       XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         XXXXX,         KC_BSLS,       KC_PIPE,      \
+    XXXXX,         XXXXX,         KC_ALGR,       XXXXX,         XXXXX,         XXXXX,         XXXXX,         KC_LPRN,       KC_RPRN,       KC_PIPE,       KC_BSLS,       KC_PIPE,      \
                                                  XXXXX,         XXXXX,         XXXXX,         KC_ENT,        KC_BSPC,       KC_DEL
     ),
 
