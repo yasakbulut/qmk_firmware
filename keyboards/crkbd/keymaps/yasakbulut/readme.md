@@ -11,6 +11,7 @@ This is a keymap heavily based off of miryoku with the following changes applied
 - Base layer right side extra keys from top to bottom are `='-`
 - Added backtick to the extra key next to Q
 - Nav layer bottom row pinkie and extra key are `\|` 
+- Rearranged the thumb row layer keys so that it is: FUN, NAV, NUM, MOUSE, GAME, MEDIA. This moves the number keys to the right hand, which is identical to a numpad. Removed SYM, since it's equivalent to NUM+SHIFT.
 
 - MacOS specific fixes:
   - Vertical mouse scroll keys are flipped
