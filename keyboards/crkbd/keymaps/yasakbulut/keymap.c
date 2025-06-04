@@ -1,5 +1,20 @@
 #include QMK_KEYBOARD_H
-#include "features/achordion.h"
+
+enum custom_keycodes {
+    SMTD_KEYCODES_BEGIN = SAFE_RANGE,
+    CKC_A,
+    CKC_S,
+    CKC_D,
+    CKC_F,
+    CKC_J,
+    CKC_K,
+    CKC_L,
+    CKC_SCLN,
+    SMTD_KEYCODES_END,
+};
+
+#include "features/sm_td.h"
+
 
 #define LAYOUT LAYOUT_split_3x6_3
 
@@ -25,17 +40,13 @@ enum {
 #define GAME(KEY) LT(LAYER_GAME, KEY)
 #define FUN(KEY) LT(LAYER_FUN, KEY)
 
-#define GUI(KEY) LGUI_T(KEY)
-#define ALT(KEY) LALT_T(KEY)
-#define CTL(KEY) LCTL_T(KEY)
-#define SFT(KEY) LSFT_T(KEY)
 // end convenience definitions
 
 // keymap
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [LAYER_BASE] = LAYOUT(
     KC_GRV,        KC_Q,          KC_W,          KC_E,          KC_R,          KC_T,          KC_Y,          KC_U,          KC_I,          KC_O,          KC_P,          KC_EQL,       \
-    XXXXX,         CTL(KC_A),     ALT(KC_S),     GUI(KC_D),     SFT(KC_F),     KC_G,          KC_H,          SFT(KC_J),     GUI(KC_K),     ALT(KC_L),     CTL(KC_SCLN),  KC_QUOT,      \
+    XXXXX,         CKC_A,         CKC_S,         CKC_D,         CKC_F,         KC_G,          KC_H,          CKC_J,         CKC_K,         CKC_L,         CKC_SCLN,      KC_QUOT,      \
     XXXXX,         KC_Z,          KC_X,          KC_C,          KC_V,          KC_B,          KC_N,          KC_M,          KC_COMM,       KC_DOT,        KC_SLSH,       KC_MINS,      \
                                                  FUN(KC_ESC),   NAV(KC_BSPC),  NUM(KC_TAB),   MOUSE(KC_ENT), GAME(KC_SPC),  MEDIA(KC_DEL)
     ),
@@ -91,37 +102,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // end keymap
 
-// start achordion
-bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-    if (!process_achordion(keycode, record)) {
+// start sm_td
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (!process_smtd(keycode, record)) {
         return false;
     }
 
     return true;
 }
 
-void matrix_scan_user(void) {
-    achordion_task();
-}
-
-bool achordion_eager_mod(uint8_t mod) {
-    // we're eagerly applying for all the mod keys
-    return true;
-}
-
-// exclude thumb keys from the same-hand rule
-bool achordion_chord(uint16_t tap_hold_keycode,
-                    keyrecord_t* tap_hold_record,
-                    uint16_t other_keycode,
-                    keyrecord_t* other_record) {
-
-    // MATRIX_ROWS is 8 for this keyboard, and the thumb keys are at rows 3 and 7
-    bool is_thumb_key = (other_record->event.key.row % (MATRIX_ROWS / 2)) == 3;
-
-    if (is_thumb_key) {
-        return true;
+void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
+    switch (keycode) {
+        SMTD_MT(CKC_A, KC_A, KC_LEFT_CTRL)
+        SMTD_MT(CKC_S, KC_S, KC_LEFT_ALT)
+        SMTD_MT(CKC_D, KC_D, KC_LEFT_GUI)
+        SMTD_MT(CKC_F, KC_F, KC_LSFT)
+        SMTD_MT(CKC_J, KC_J, KC_LSFT)
+        SMTD_MT(CKC_K, KC_K, KC_LEFT_GUI)
+        SMTD_MT(CKC_L, KC_L, KC_LEFT_ALT)
+        SMTD_MT(CKC_SCLN, KC_SCLN, KC_LEFT_CTRL)
     }
-
-    return achordion_opposite_hands(tap_hold_record, other_record);
 }
-// end achordion
+
+// end sm_td
