@@ -1,8 +1,3 @@
-#define MAX_DEFERRED_EXECUTORS 10
-
-#define SMTD_GLOBAL_TAP_TERM 125
-#define SMTD_GLOBAL_RELEASE_TERM 10
-
 #define OLED_FONT_H "users/yasakbulut/glcdfont.c"
 
 #define RGB_MATRIX_SPLIT { 27, 27 }
